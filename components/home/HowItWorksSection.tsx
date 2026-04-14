@@ -83,12 +83,8 @@ function StepCard({ step, index }: { step: typeof STEPS[number]; index: number }
 
   return (
     <div
-      className="relative overflow-hidden group cursor-pointer"
-      style={{
-        aspectRatio: '4/3',
-        borderRight: index % 2 === 0 ? '1px solid rgba(0,0,0,0.07)' : 'none',
-        borderBottom: index < 2 ? '1px solid rgba(0,0,0,0.07)' : 'none',
-      }}
+      className={`relative overflow-hidden group cursor-pointer ${index % 2 === 0 ? 'sm:border-r' : ''} ${index < 2 ? 'border-b' : ''} border-[rgba(0,0,0,0.07)]`}
+      style={{ aspectRatio: '4/3' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -188,7 +184,7 @@ export default function HowItWorksSection() {
 
       {/* ── Section Header ────────────────────────────────────────────── */}
       <div
-        className="px-8 sm:px-12 lg:px-20 pt-32 pb-20"
+        className="px-8 sm:px-12 lg:px-20 pt-16 sm:pt-24 lg:pt-32 pb-12 sm:pb-16 lg:pb-20"
         style={{ borderBottom: '1px solid rgba(0,0,0,0.07)' }}
       >
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">

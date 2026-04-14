@@ -166,7 +166,7 @@ export default function WhyLeaseSection() {
 
       {/* ── Header ─────────────────────────────────────────────────── */}
       <div
-        className="px-8 sm:px-12 lg:px-20 pt-32 pb-20"
+        className="px-8 sm:px-12 lg:px-20 pt-16 sm:pt-24 lg:pt-32 pb-12 sm:pb-16 lg:pb-20"
         style={{ borderBottom: '1px solid rgba(0,0,0,0.07)' }}
       >
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-12">

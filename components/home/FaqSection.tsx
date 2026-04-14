@@ -174,7 +174,7 @@ export default function FaqSection() {
                   }}
                 >
                   <p
-                    className="pb-7 pr-10"
+                    className="pb-7 pr-4 sm:pr-10"
                     style={{
                       color: 'rgba(0,0,0,0.5)',
                       fontSize: '12px',

@@ -77,10 +77,14 @@ function StatCard({ value, suffix, label, sub, decimal, index, triggerCount }: {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.7, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      className={[
+        index === 0 ? 'border-r border-b sm:border-b-0' : '',
+        index === 1 ? 'sm:border-r border-b sm:border-b-0' : '',
+        index === 2 ? 'border-r' : '',
+        'border-[rgba(0,0,0,0.07)]',
+      ].join(' ')}
       style={{
-        flex: 1, minWidth: 0,
-        borderRight: index < STATS.length - 1 ? '1px solid rgba(0,0,0,0.07)' : 'none',
-        padding: '40px 32px',
+        padding: 'clamp(1.5rem,3.5vw,2.5rem) clamp(1rem,3vw,2rem)',
         display: 'flex', flexDirection: 'column', gap: '8px',
       }}
     >
@@ -195,8 +199,8 @@ export default function TechSection() {
       {/* ── 2. ANIMATED STATS ROW — light gray ──────────────────────────── */}
       <div
         ref={statsRef}
+        className="grid grid-cols-2 sm:grid-cols-4"
         style={{
-          display: 'flex', flexWrap: 'wrap',
           background: '#f8f8f8',
           borderBottom: '1px solid rgba(0,0,0,0.07)',
         }}
@@ -223,7 +227,7 @@ export default function TechSection() {
           </motion.div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2">
           {PILLARS.map((item, i) => (
             <motion.div
               key={item.num}

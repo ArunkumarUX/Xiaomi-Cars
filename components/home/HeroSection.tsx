@@ -50,6 +50,11 @@ export default function HeroSection() {
 
   return (
     <section ref={sectionRef} className="relative w-full overflow-hidden" style={{ height: '100svh', minHeight: '700px' }}>
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 639px) {
+          .steps-item { border-right: none !important; padding-left: 0 !important; }
+        }
+      ` }} />
 
       {/* Background video */}
       <motion.div style={{ position: 'absolute', inset: '-12% 0', y: bgY }}>
@@ -160,7 +165,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.4 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="flex items-center gap-5"
+                className="flex items-center gap-5 steps-item"
                 style={{
                   padding: '26px 0',
                   paddingLeft: i === 0 ? 0 : '40px',
@@ -226,7 +231,7 @@ export default function HeroSection() {
 
       {/* Scroll cue with bounce animation */}
       <motion.div
-        className="absolute flex flex-col items-center gap-2.5"
+        className="absolute hidden sm:flex flex-col items-center gap-2.5"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 0.6 }}

@@ -64,6 +64,10 @@ export default function CarsPage() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#f9f9f9' }}>
+      <style dangerouslySetInnerHTML={{ __html: `
+        .filter-bar::-webkit-scrollbar { display: none; }
+        .filter-no-shrink { flex-shrink: 0; }
+      ` }} />
 
       {/* ── Header — white ─────────────────────────────────────────────────── */}
       <div style={{ background: '#fff', paddingTop: '68px', borderBottom: '1px solid rgba(0,0,0,0.07)' }}>
@@ -98,10 +102,11 @@ export default function CarsPage() {
         position: 'sticky', top: '68px', zIndex: 40,
         background: '#fff', borderBottom: '1px solid rgba(0,0,0,0.07)',
       }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 clamp(2rem,5vw,5rem)' }}>
-          <div style={{
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '0 clamp(1rem,5vw,5rem)' }}>
+          <div className="filter-bar" style={{
             display: 'flex', alignItems: 'center', gap: '6px',
-            padding: '12px 0', flexWrap: 'wrap',
+            padding: '12px 0', overflowX: 'auto', WebkitOverflowScrolling: 'touch',
+            scrollbarWidth: 'none', msOverflowStyle: 'none',
           }}>
 
             {/* Body type */}
@@ -133,7 +138,7 @@ export default function CarsPage() {
             <div style={{ flex: 1 }} />
 
             {/* Budget dropdown */}
-            <div style={{ position: 'relative', marginRight: '6px' }}>
+            <div style={{ position: 'relative', marginRight: '6px', flexShrink: 0 }}>
               <select
                 value={budgetIdx}
                 onChange={e => setBudgetIdx(Number(e.target.value))}
@@ -159,7 +164,7 @@ export default function CarsPage() {
             </div>
 
             {/* Sort dropdown */}
-            <div style={{ position: 'relative', marginRight: '12px' }}>
+            <div style={{ position: 'relative', marginRight: '12px', flexShrink: 0 }}>
               <select
                 value={sort}
                 onChange={e => setSort(e.target.value)}
@@ -226,7 +231,7 @@ export default function CarsPage() {
 
 // ── Primitive filter components ───────────────────────────────────────────────
 function FilterGroup({ children }: { children: React.ReactNode }) {
-  return <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>{children}</div>
+  return <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flexShrink: 0 }}>{children}</div>
 }
 
 function FilterDivider() {

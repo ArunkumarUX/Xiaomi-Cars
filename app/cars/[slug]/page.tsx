@@ -203,9 +203,9 @@ export default function CarDetailPage() {
       {/* ── Content ────────────────────────────────────────────── */}
       <div style={{
         maxWidth: '1300px', margin: '0 auto',
-        padding: 'clamp(3rem,5vw,5rem) clamp(1.5rem,3.5vw,3.5rem)',
+        padding: 'clamp(2rem,4vw,5rem) clamp(1.25rem,3.5vw,3.5rem)',
       }}>
-        <div style={{ display: 'flex', flexDirection: 'row', gap: 'clamp(2.5rem,5vw,5rem)', flexWrap: 'wrap' }}>
+        <div className="flex flex-col-reverse sm:flex-row flex-wrap" style={{ gap: 'clamp(2rem,5vw,5rem)' }}>
 
           {/* ── Left column ───────────────────────────────────── */}
           <div style={{ flex: 1, minWidth: 'min(100%, 480px)' }}>
@@ -257,19 +257,23 @@ export default function CarDetailPage() {
               }}>
                 Specifications
               </div>
-              <div style={{
-                display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
+              <div className="grid grid-cols-2 sm:grid-cols-4" style={{
                 background: '#111', border: '1px solid rgba(255,255,255,0.06)',
                 borderRadius: '16px', overflow: 'hidden',
               }}>
                 {specItems.map((spec, i) => (
                   <div
                     key={spec.label}
+                    className={[
+                      i === 0 ? 'border-r border-b sm:border-b-0' : '',
+                      i === 1 ? 'sm:border-r border-b sm:border-b-0' : '',
+                      i === 2 ? 'border-r' : '',
+                      'border-[rgba(255,255,255,0.06)]',
+                    ].join(' ')}
                     style={{
                       display: 'flex', flexDirection: 'column',
                       alignItems: 'center', justifyContent: 'center',
-                      padding: '24px 12px', textAlign: 'center',
-                      borderRight: i < specItems.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none',
+                      padding: '20px 10px', textAlign: 'center',
                     }}
                   >
                     <span style={{ color: '#fff', fontWeight: 500, fontSize: '15px', lineHeight: 1, marginBottom: '6px' }}>
@@ -347,7 +351,7 @@ export default function CarDetailPage() {
           </div>
 
           {/* ── Right column — pricing panel ──────────────────── */}
-          <div style={{ width: 'min(100%, 360px)', flexShrink: 0 }}>
+          <div style={{ width: '100%', maxWidth: '100%' }} className="sm:w-auto sm:max-w-[360px] sm:flex-shrink-0">
             <div style={{
               background: '#fff', borderRadius: '24px', overflow: 'hidden',
               position: 'sticky', top: '88px',

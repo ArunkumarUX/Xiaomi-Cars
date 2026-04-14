@@ -173,7 +173,7 @@ export default function FeaturedCars() {
       <section style={{ background: '#fff' }}>
 
         {/* ── Section Header — Tesla-style generous spacing ─────────────────────────────────── */}
-        <div ref={headerRef} className="px-8 sm:px-12 lg:px-20 pt-40 pb-24"
+        <div ref={headerRef} className="px-8 sm:px-12 lg:px-20 pt-20 sm:pt-28 lg:pt-40 pb-12 sm:pb-16 lg:pb-24"
           style={{ borderBottom: '1px solid rgba(0,0,0,0.08)' }}>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
             <div>
@@ -216,23 +216,27 @@ export default function FeaturedCars() {
               transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col items-start lg:items-end gap-5 pb-2 flex-shrink-0"
             >
-              <p style={{ color: 'rgba(0,0,0,0.4)', fontSize: '12px', letterSpacing: '0.04em', maxWidth: '230px', lineHeight: 1.85, textAlign: 'right' }}>
+              <p className="lg:text-right" style={{ color: 'rgba(0,0,0,0.4)', fontSize: '12px', letterSpacing: '0.04em', maxWidth: '230px', lineHeight: 1.85 }}>
                 Zero down payment. Full insurance. Free registration. All in one monthly lease.
               </p>
-              <Link href="/cars" className="group inline-flex items-center gap-3 transition-all duration-300 hover-lift">
+              <Link href="/cars" className="group inline-flex items-center gap-3">
                 <span className="text-black/40 group-hover:text-black/80 transition-colors duration-300"
                   style={{ fontSize: '14px', fontWeight: 400 }}>
                   View Lease Plans
                 </span>
-                <motion.span
-                  className="flex items-center justify-center rounded-full transition-all duration-300 group-hover:bg-black/90 group-hover:text-white"
-                  style={{ width: '36px', height: '36px', border: '1px solid rgba(0,0,0,0.15)', color: 'rgba(0,0,0,0.4)' }}
-                  whileHover={{ x: 5 }}
+                <span
+                  className="flex items-center justify-center rounded-full group-hover:bg-black/90 group-hover:text-white group-hover:translate-x-1 group-hover:border-black/80"
+                  style={{
+                    width: '36px', height: '36px',
+                    border: '1px solid rgba(0,0,0,0.15)',
+                    color: 'rgba(0,0,0,0.4)',
+                    transition: 'background 0.3s, color 0.3s, transform 0.3s, border-color 0.3s',
+                  }}
                 >
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </motion.span>
+                </span>
               </Link>
             </motion.div>
           </div>
