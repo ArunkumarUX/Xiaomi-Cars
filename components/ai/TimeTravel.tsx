@@ -206,13 +206,13 @@ export default function TimeTravel({ pricePerMonth }: TimeTravelProps) {
             lineHeight: 1.05,
           }}>
             See your{' '}
-            <span style={{ fontWeight: 800 }}>lease journey.</span>
+            <span style={{ fontWeight: 800 }}>ownership journey.</span>
           </h2>
           <p style={{
             color: 'rgba(255,255,255,0.28)', fontSize: '14px',
             maxWidth: '400px', marginTop: '16px', lineHeight: 1.7,
           }}>
-            Drag the timeline to explore how your lease evolves over time.
+            Drag the timeline to explore how your ownership value evolves over time.
           </p>
         </div>
 
@@ -223,7 +223,7 @@ export default function TimeTravel({ pricePerMonth }: TimeTravelProps) {
               fontSize: '10px', letterSpacing: '0.28em', textTransform: 'uppercase',
               color: 'rgba(255,255,255,0.2)',
             }}>
-              Lease duration
+              Finance term
             </span>
             <span style={{
               fontSize: '20px', fontWeight: 700, color: '#E31937',
@@ -241,7 +241,7 @@ export default function TimeTravel({ pricePerMonth }: TimeTravelProps) {
             step={1}
             value={months}
             onChange={handleSlider}
-            aria-label="Lease duration in months"
+            aria-label="Finance term in months"
           />
 
           {/* Milestone markers */}
@@ -281,7 +281,7 @@ export default function TimeTravel({ pricePerMonth }: TimeTravelProps) {
               fontSize: '10px', letterSpacing: '0.24em', textTransform: 'uppercase',
               color: 'rgba(255,255,255,0.25)', margin: '0 0 12px',
             }}>
-              Total Paid
+              Finance Paid
             </p>
             <p style={{
               fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 800,
@@ -321,7 +321,7 @@ export default function TimeTravel({ pricePerMonth }: TimeTravelProps) {
               fontSize: '10px', letterSpacing: '0.24em', textTransform: 'uppercase',
               color: 'rgba(255,255,255,0.25)', margin: '0 0 12px',
             }}>
-              Lease Value Score
+              Ownership Value Score
             </p>
             <p style={{
               fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: 800,
@@ -356,7 +356,7 @@ export default function TimeTravel({ pricePerMonth }: TimeTravelProps) {
             <svg
               viewBox={`0 0 ${CHART_W} ${CHART_H}`}
               style={{ width: '100%', minWidth: '280px', height: 'auto', display: 'block' }}
-              aria-label="Satisfaction curve over lease duration"
+              aria-label="Satisfaction curve over ownership period"
               role="img"
             >
               <defs>
@@ -437,7 +437,7 @@ export default function TimeTravel({ pricePerMonth }: TimeTravelProps) {
                 borderRadius: '50%', background: '#E31937', flexShrink: 0,
               }} />
               <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.5 }}>
-                You're in the <strong style={{ color: '#E31937', fontWeight: 600 }}>peak value window</strong> — 24–36 months delivers the best satisfaction and cost balance.
+                You're in the <strong style={{ color: '#E31937', fontWeight: 600 }}>peak value window</strong> — 24–36 month finance delivers the best ownership satisfaction and value balance.
               </p>
             </div>
           )}

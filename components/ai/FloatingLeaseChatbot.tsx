@@ -57,7 +57,7 @@ const SEDANS: CarData[] = [
     id: 'su7',
     name: 'SU7',
     specs: '299HP · 700km · RWD',
-    price: 'AED 1,099/mo',
+    price: 'AED 129,900',
     img: `${SU7_CDN}/6-1.png`,
     hp: '299 HP',
     range: '700 km',
@@ -67,7 +67,7 @@ const SEDANS: CarData[] = [
     id: 'su7-pro',
     name: 'SU7 Pro',
     specs: '299HP · 830km · RWD',
-    price: 'AED 1,399/mo',
+    price: 'AED 154,900',
     img: `${SU7_CDN}/6-2.png`,
     hp: '299 HP',
     range: '830 km',
@@ -77,7 +77,7 @@ const SEDANS: CarData[] = [
     id: 'su7-max',
     name: 'SU7 Max',
     specs: '673HP · 800km · AWD',
-    price: 'AED 2,199/mo',
+    price: 'AED 189,900',
     img: `${SU7_CDN}/6-7.png`,
     hp: '673 HP',
     range: '800 km',
@@ -87,7 +87,7 @@ const SEDANS: CarData[] = [
     id: 'su7-ultra',
     name: 'SU7 Ultra',
     specs: '1526HP · 630km · AWD',
-    price: 'AED 3,999/mo',
+    price: 'AED 379,900',
     img: '/images/cars/su7-ultra.jpg',
     hp: '1526 HP',
     range: '630 km',
@@ -100,7 +100,7 @@ const SUVS: CarData[] = [
     id: 'yu7',
     name: 'YU7',
     specs: '681HP · 760km · AWD',
-    price: 'AED 1,699/mo',
+    price: 'AED 169,900',
     img: `${YU7_CDN}/9.2.png`,
     hp: '681 HP',
     range: '760 km',
@@ -109,10 +109,10 @@ const SUVS: CarData[] = [
 ]
 
 const INCLUDED_ITEMS = [
-  'Comprehensive Insurance',
-  'Free Registration',
+  'Comprehensive Warranty',
+  'Free First-Year Registration',
   '24/7 Roadside Assistance',
-  'Full Maintenance',
+  'Full Service Package',
 ]
 
 const SHOWROOMS = [
@@ -281,8 +281,8 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
   // Progress segment index
   const currentProgressIndex = PROGRESS_STAGES.indexOf(stage)
 
-  const monthlyPrice = selectedCar ? getPriceNumber(selectedCar.price) : 0
-  const totalLease = monthlyPrice * quoteForm.term
+  const purchasePrice = selectedCar ? getPriceNumber(selectedCar.price) : 0
+  const estMonthly = quoteForm.term > 0 ? Math.round(purchasePrice / quoteForm.term) : 0
 
   const css = `
         @keyframes leaseChatSlideUp {
@@ -384,7 +384,7 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
 
         <button
           onClick={() => setIsOpen((o) => !o)}
-          aria-label={isOpen ? 'Close Lease Chat' : 'Lease Now'}
+          aria-label={isOpen ? 'Close Buy Chat' : 'Buy Now'}
           className="lc-fab-btn"
           style={{
             height: '44px',
@@ -422,7 +422,7 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
             </svg>
           )}
           <span style={{ fontSize: '13px', fontWeight: 600, color: isOpen ? 'rgba(255,255,255,0.7)' : isOverLight ? '#111' : '#fff', letterSpacing: '-0.01em' }}>
-            Lease Now
+            Buy Now
           </span>
         </button>
       </div>}
@@ -431,7 +431,7 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
       {isOpen && (
         <div
           role="dialog"
-          aria-label="Xiaomi Lease Chat"
+          aria-label="Xiaomi Buy Chat"
           className="lc-chat-panel"
           style={{
             position: 'fixed',
@@ -534,10 +534,10 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
 
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontSize: '14px', fontWeight: 700, color: '#fff', lineHeight: 1.2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                Lease Now
+                Buy Now
               </div>
               <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.2em', textTransform: 'uppercase', marginTop: '1px' }}>
-                Xiaomi Leasing UAE
+                Xiaomi Cars UAE
               </div>
             </div>
 
@@ -599,7 +599,7 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src="https://s1.xiaomiev.com/activity-outer-assets/0328/images/home/section4x1281.jpg"
-                      alt="Xiaomi EV"
+                      alt="Xiaomi Car"
                       style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', position: 'absolute', inset: 0 }}
                     />
                     {/* Dark gradient scrim */}
@@ -609,21 +609,21 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
                     <div style={{ position: 'absolute', top: 20, left: 20, display: 'flex', alignItems: 'center', gap: '10px' }}>
                       <div style={{ height: '1px', width: '20px', background: '#E31937' }} />
                       <span style={{ fontSize: '9px', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', fontWeight: 600 }}>
-                        Xiaomi Leasing UAE
+                        Xiaomi Cars UAE
                       </span>
                     </div>
 
                     {/* Bottom text overlay */}
                     <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '0 22px 24px' }}>
                       <h1 style={{ fontSize: '32px', lineHeight: 0.95, margin: '0 0 10px', letterSpacing: '-0.04em' }}>
-                        <span style={{ fontWeight: 200, color: '#fff', display: 'block' }}>Drive a</span>
-                        <span style={{ fontWeight: 800, color: '#fff', display: 'block' }}>Xiaomi EV.</span>
+                        <span style={{ fontWeight: 200, color: '#fff', display: 'block' }}>Own a</span>
+                        <span style={{ fontWeight: 800, color: '#fff', display: 'block' }}>Xiaomi Car.</span>
                       </h1>
                       <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)', margin: '0 0 6px', letterSpacing: '-0.01em' }}>
-                        Zero down · Full insurance · Free registration
+                        Warranty included · Free registration · Flexible financing
                       </p>
                       <p style={{ fontSize: '15px', fontWeight: 700, color: '#E31937', margin: 0, letterSpacing: '-0.01em' }}>
-                        From AED 1,099 / month
+                        From AED 129,900
                       </p>
                     </div>
                   </div>
@@ -632,7 +632,7 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
                   <div style={{ padding: '16px 20px', background: '#0d0d0d', borderTop: '1px solid rgba(255,255,255,0.06)', flexShrink: 0 }}>
                     {/* 3 stat chips */}
                     <div style={{ display: 'flex', gap: '8px', marginBottom: '14px' }}>
-                      {[['5', 'Models'], ['0', 'Down'], ['100%', 'Insured']].map(([val, label]) => (
+                      {[['5', 'Models'], ['AED', '129,900+'], ['100%', 'Warranty']].map(([val, label]) => (
                         <div key={label} style={{ flex: 1, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '2px', padding: '10px 8px', textAlign: 'center' }}>
                           <div style={{ fontSize: '16px', fontWeight: 800, color: '#fff', letterSpacing: '-0.02em', lineHeight: 1 }}>{val}</div>
                           <div style={{ fontSize: '9px', color: 'rgba(255,255,255,0.35)', textTransform: 'uppercase', letterSpacing: '0.2em', marginTop: '3px' }}>{label}</div>
@@ -658,7 +658,7 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
                       onMouseEnter={(e) => { const el = e.currentTarget as HTMLButtonElement; el.style.background = '#C41630' }}
                       onMouseLeave={(e) => { const el = e.currentTarget as HTMLButtonElement; el.style.background = '#E31937' }}
                     >
-                      Start Leasing
+                      Buy Now
                     </button>
                   </div>
                 </div>
@@ -678,14 +678,14 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
                     {
                       category: 'sedan' as Category,
                       series: 'SU7 Series',
-                      sub: 'Performance sedan · From AED 1,099/mo',
+                      sub: 'Performance sedan · From AED 129,900',
                       img: `${SU7_CDN}/6-1.png`,
                       tag: '4 models',
                     },
                     {
                       category: 'suv' as Category,
                       series: 'YU7 Series',
-                      sub: 'Flagship SUV · From AED 1,699/mo',
+                      sub: 'Flagship SUV · From AED 169,900',
                       img: `${YU7_CDN}/9.2.png`,
                       tag: '1 model',
                     },
@@ -926,7 +926,7 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
                         el.style.background = '#E31937'
                       }}
                     >
-                      Request Quote
+                      Buy This Car
                     </button>
                   </div>
                 </div>
@@ -1000,7 +1000,7 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
 
                   {/* Lease Term */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '7px' }}>
-                    <label style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.2em' }}>Lease Term</label>
+                    <label style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.2em' }}>Finance Term</label>
                     <div style={{ display: 'flex', gap: '8px' }}>
                       {([24, 36] as const).map((term) => (
                         <button
@@ -1084,7 +1084,7 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
                       textTransform: 'uppercase',
                     }}
                   >
-                    Submit Application
+                    Submit Enquiry
                   </button>
                 </div>
               )}
@@ -1111,17 +1111,17 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
                         <div>
                           <p style={{ fontSize: '15px', fontWeight: 700, color: '#fff', margin: '0 0 3px' }}>{selectedCar.name}</p>
-                          <p style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{quoteForm.term}-month lease</p>
+                          <p style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{quoteForm.term}-month finance</p>
                         </div>
                         <div style={{ textAlign: 'right' }}>
                           <p style={{ fontSize: '15px', fontWeight: 700, color: '#E31937', margin: '0 0 2px' }}>{selectedCar.price}</p>
-                          <p style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.1em' }}>per month</p>
+                          <p style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.1em' }}>purchase price</p>
                         </div>
                       </div>
 
                       {/* Included items */}
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '14px', paddingBottom: '14px', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                        {['Insurance', 'Registration', 'Maintenance', 'Roadside Assistance'].map((item) => (
+                        {['Comprehensive Warranty', 'Free Registration', 'Full Service Package', 'Roadside Assistance'].map((item) => (
                           <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                             <Check size={10} color="rgba(255,255,255,0.5)" strokeWidth={2.5} />
                             <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.45)' }}>{item}</span>
@@ -1129,11 +1129,11 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
                         ))}
                       </div>
 
-                      {/* Total */}
+                      {/* Est. monthly */}
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Total over {quoteForm.term} months</span>
+                        <span style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Est. monthly over {quoteForm.term} months</span>
                         <span style={{ fontSize: '14px', fontWeight: 700, color: 'rgba(255,255,255,0.8)' }}>
-                          AED {(monthlyPrice * quoteForm.term).toLocaleString()}
+                          AED {estMonthly.toLocaleString()}/mo
                         </span>
                       </div>
                     </div>
@@ -1238,7 +1238,7 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
                   </div>
                   <div style={{ textAlign: 'center' }}>
                     <p style={{ fontSize: '14px', fontWeight: 600, color: '#fff', margin: '0 0 6px' }}>
-                      Processing your application
+                      Processing your purchase enquiry
                     </p>
                     <p style={{ fontSize: '11px', color: 'rgba(255,255,255,0.3)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                       This takes just a moment
@@ -1281,7 +1281,7 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
                       Approved
                     </h2>
                     <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.4)', margin: 0, lineHeight: 1.6 }}>
-                      Your lease for <strong style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>{selectedCar.name}</strong> is confirmed
+                      Your purchase enquiry for <strong style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 600 }}>{selectedCar.name}</strong> is confirmed
                     </p>
                   </div>
 
@@ -1454,14 +1454,14 @@ export default function FloatingLeaseChatbot({ hideFab = false }: { hideFab?: bo
                   </div>
 
                   <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)', margin: 0, lineHeight: 1.6 }}>
-                    Please upload the following documents to complete your lease application.
+                    Please upload the following documents to complete your purchase application.
                   </p>
 
                   {/* Doc rows */}
                   {[
                     { key: 'emiratesId' as keyof DocStatus, label: 'Emirates ID', sub: 'Front + back photo' },
                     { key: 'licence' as keyof DocStatus, label: 'UAE Driving Licence', sub: 'Valid licence' },
-                    { key: 'salary' as keyof DocStatus, label: 'Salary Slips', sub: 'Last 3 months' },
+                    { key: 'salary' as keyof DocStatus, label: 'Proof of Income', sub: 'Last 3 months' },
                   ].map((doc) => (
                     <div
                       key={doc.key}

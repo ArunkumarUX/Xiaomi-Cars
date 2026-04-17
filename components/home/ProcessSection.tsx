@@ -53,7 +53,7 @@ const STEPS: Step[] = [
   {
     num: '06',
     title: 'Drive Away',
-    desc: 'Your Xiaomi EV is prepped, inspected, and delivered to your door.',
+    desc: 'Your Xiaomi car is prepped, inspected, and delivered to your door.',
     Icon: Key,
   },
 ]

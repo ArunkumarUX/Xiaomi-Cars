@@ -5,7 +5,7 @@ import {
 } from 'lucide-react'
 
 const BENEFITS = [
-  { icon: CreditCard, title: 'No Down Payment', description: 'Start leasing your Xiaomi EV with zero upfront cost. Just sign and drive away the same day.' },
+  { icon: CreditCard, title: 'No Down Payment', description: 'Start buying your Xiaomi car with zero upfront deposit. Just sign and drive away the same day.' },
   { icon: Shield, title: 'Full Comprehensive Insurance', description: '3rd party liability, natural disaster, and full cover included with every Xiaomi lease plan.' },
   { icon: FileCheck, title: 'Free Registration', description: 'Vehicle registration and annual renewal handled entirely by us — zero paperwork.' },
   { icon: HeartPulse, title: '24/7 Roadside Assistance', description: 'Round-the-clock support across the UAE. Day or night, we\'ve got you covered.' },
@@ -41,7 +41,7 @@ export default function WhyLeasePage() {
             <span className="text-[#E31937]">Smarter Choice</span>
           </h1>
           <p className="text-gray-400 text-xl max-w-2xl leading-relaxed">
-            Discover why thousands of UAE residents choose to lease their Xiaomi EV rather than buy.
+            Discover why thousands of UAE residents choose to own their Xiaomi car.
             More value, less worry.
           </p>
         </div>
@@ -122,7 +122,7 @@ export default function WhyLeasePage() {
             Ready to <span className="text-[#E31937]">Drive Smarter?</span>
           </h2>
           <p className="text-gray-400 text-lg mb-8">
-            Explore our Xiaomi EV fleet and get a personalised lease quote today.
+            Explore our Xiaomi car range and get a personalised purchase quote today.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

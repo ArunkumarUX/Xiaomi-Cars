@@ -8,7 +8,7 @@ import FindMatchButton from './FindMatchButton'
 const STEPS = [
   {
     num: '01',
-    label: 'Choose your EV',
+    label: 'Choose your car',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/>
@@ -96,7 +96,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               style={{ display: 'block' }}
             >
-              Lease Bold.
+              Own Bold.
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 40 }}
@@ -104,7 +104,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
               style={{ display: 'block', fontWeight: 800 }}
             >
-              Drive Free.
+              Drive Yours.
             </motion.span>
           </motion.h1>
 
@@ -116,8 +116,8 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
             style={{ fontSize: 'clamp(13px, 1.3vw, 15px)', maxWidth: '400px', lineHeight: 1.9, letterSpacing: '0.01em' }}
           >
-            The world&apos;s most advanced EVs — fully insured,<br />
-            zero down, free to upgrade. From AED&nbsp;1,099&nbsp;/&nbsp;month.
+            The world&apos;s most advanced cars — yours to own.<br />
+            Flexible financing available. From AED&nbsp;129,900.
           </motion.p>
 
           {/* CTAs — Tesla glass-morphism style with staggered animation */}

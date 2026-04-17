@@ -22,38 +22,38 @@ interface Benefit {
 const BENEFITS: Benefit[] = [
   {
     num: '01',
-    title: 'Pay only for what you drive',
-    desc: "Enjoy the car without owning the depreciation. Lease payments cover only the vehicle's use — nothing more.",
+    title: 'Own it outright',
+    desc: "The car is yours from day one. Build equity, customise it, and drive without restrictions — ownership on your terms.",
     Icon: TrendingDown,
   },
   {
     num: '02',
-    title: 'All-inclusive from day one',
-    desc: 'Full insurance, free registration, and maintenance bundled into one fixed monthly payment. No hidden costs.',
+    title: 'Warranty & service included',
+    desc: 'Comprehensive warranty, free registration, and a full service package bundled into your purchase. No surprise costs.',
     Icon: Package,
   },
   {
     num: '03',
-    title: 'Instant, hassle-free approval',
-    desc: 'Minimal paperwork. Our digital process means approval in hours, not days.',
+    title: 'Fast, hassle-free purchase',
+    desc: 'Minimal paperwork. Our digital process means you can be driving your Xiaomi within 24 hours of approval.',
     Icon: Zap,
   },
   {
     num: '04',
-    title: 'Upgrade every cycle',
-    desc: 'Step into the latest Xiaomi model when your lease ends. Always drive the newest technology.',
+    title: 'Upgrade whenever you want',
+    desc: 'Trade in your Xiaomi for the latest model at any time. No waiting for a term to end — your timeline, your choice.',
     Icon: RefreshCw,
   },
   {
     num: '05',
-    title: 'Zero financial burden',
-    desc: "Leasing doesn't affect your credit score and keeps your capital free for what matters most.",
+    title: 'Flexible financing options',
+    desc: "Spread the cost over 12, 24, or 36 months. Choose the plan that fits your budget with competitive finance rates.",
     Icon: ShieldCheck,
   },
   {
     num: '06',
-    title: 'Total value, zero depreciation',
-    desc: 'Return the car at end of term. You paid for the experience — not the loss in resale value.',
+    title: 'Full resale value',
+    desc: 'As an owner you benefit from the Xiaomi resale market. Sell or trade in at any point — your asset, your decision.',
     Icon: BarChart3,
   },
 ]
@@ -185,7 +185,7 @@ export default function WhyLeaseSection() {
                   fontWeight: 600,
                 }}
               >
-                The Leasing Advantage
+                The Ownership Advantage
               </span>
             </div>
             <motion.h2
@@ -201,9 +201,9 @@ export default function WhyLeaseSection() {
                 lineHeight: 0.88,
               }}
             >
-              Why choose
+              Why own
               <br />
-              <span style={{ fontWeight: 800 }}>Xiaomi Leasing?</span>
+              <span style={{ fontWeight: 800 }}>a Xiaomi?</span>
             </motion.h2>
           </div>
 
@@ -221,8 +221,8 @@ export default function WhyLeaseSection() {
                 letterSpacing: '0.01em',
               }}
             >
-              Drive the latest Xiaomi EV with one flat monthly payment. No ownership headaches,
-              no depreciation surprises — just pure driving pleasure.
+              Own the latest Xiaomi car outright. Build equity, drive without restrictions,
+              and enjoy the pride of ownership from day one.
             </motion.p>
 
             <motion.div
@@ -262,7 +262,7 @@ export default function WhyLeaseSection() {
                   transition: 'opacity 0.3s',
                 }}
               >
-                From AED 1,099 / mo
+                From AED 129,900
               </Link>
             </motion.div>
           </div>

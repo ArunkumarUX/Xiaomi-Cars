@@ -13,7 +13,7 @@ const MOBILE_LINKS = [
   { label: 'SU7 Ultra',  href: '/cars/xiaomi-su7-ultra' },
   { label: 'YU7',        href: '/cars/xiaomi-yu7' },
   { label: 'All Models', href: '/cars' },
-  { label: 'My Lease',   href: '/my-lease' },
+  { label: 'My Orders',  href: '/my-lease' },
 ]
 
 export default function Navbar() {
@@ -67,7 +67,7 @@ export default function Navbar() {
             <img src="/images/xiaomi-logo.svg" alt="Xiaomi" className="h-7 w-auto" />
             <div className="hidden sm:block leading-none">
               <div style={{ color: dark ? 'rgba(0,0,0,0.7)' : 'rgba(255,255,255,0.8)' }} className="text-[10px] font-semibold uppercase tracking-[0.22em] leading-none transition-colors duration-700">
-                Car Leasing
+                Xiaomi Cars
               </div>
               <div style={{ color: dark ? 'rgba(0,0,0,0.35)' : 'rgba(255,255,255,0.3)' }} className="text-[9px] tracking-[0.15em] leading-none mt-0.5 transition-colors duration-700">
                 Dubai · UAE
@@ -195,7 +195,7 @@ export default function Navbar() {
                 <Link href="/my-lease" onClick={() => setShowLogin(false)}>
                   <button className="w-full text-white text-[14px] py-3.5 rounded-full transition-all hover:opacity-90 mb-3"
                     style={{ background: '#E31937' }}>
-                    My Lease
+                    My Orders
                   </button>
                 </Link>
                 <button
@@ -219,7 +219,7 @@ export default function Navbar() {
                   Sign in
                 </h2>
                 <p className="text-center text-black/40 text-[14px] mb-8">
-                  to Xiaomi Car Leasing · Dubai UAE
+                  to Xiaomi Cars · Dubai UAE
                 </p>
 
                 {/* Google button */}

@@ -6,8 +6,8 @@ import Link from 'next/link'
 
 const STEPS = [
   {
-    key: 'quotation',
-    label: 'QUOTATION APPROVAL',
+    key: 'confirmation',
+    label: 'ORDER CONFIRMATION',
     status: 'Pending Approval',
     statusColor: '#E31937',
     icon: '📋',
@@ -20,35 +20,36 @@ const STEPS = [
     icon: '📄',
   },
   {
-    key: 'pickup',
-    label: 'VEHICLE READY FOR PICKUP',
-    status: 'Pending Calendar',
+    key: 'collection',
+    label: 'VEHICLE COLLECTION',
+    status: 'Pending Schedule',
     statusColor: '#888',
     icon: '🚗',
   },
 ]
 
 const RIGHT_PANELS: Record<string, React.ReactNode> = {
-  quotation: <QuotationApproval />,
+  confirmation: <OrderConfirmation />,
   documents: <DocumentVerification />,
-  pickup: <VehiclePickup />,
+  collection: <VehicleCollection />,
 }
 
-export default function MyLeasePage() {
+export default function MyOrdersPage() {
   return (
     <Suspense>
-      <MyLeaseContent />
+      <MyOrdersContent />
     </Suspense>
   )
 }
 
-function MyLeaseContent() {
+function MyOrdersContent() {
   const searchParams = useSearchParams()
   const carImg = searchParams.get('img') ?? 'https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=400&auto=format&fit=crop'
   const carColor = searchParams.get('color') ?? ''
+  const carPrice = searchParams.get('price') ?? 'AED 129,900'
 
   const [tab, setTab] = useState<'active' | 'inactive'>('active')
-  const [activeStep, setActiveStep] = useState('quotation')
+  const [activeStep, setActiveStep] = useState('confirmation')
 
   return (
     <div className="min-h-screen pb-12" style={{ background: '#ebebeb' }}>
@@ -61,7 +62,7 @@ function MyLeaseContent() {
             <span>›</span>
             <Link href="/cars/xiaomi-su7-standard" className="hover:text-[#E31937] uppercase tracking-wider font-semibold">XIAOMI SU7</Link>
             <span>›</span>
-            <span className="uppercase tracking-wider font-semibold" style={{ color: '#ddd' }}>MY LEASE</span>
+            <span className="uppercase tracking-wider font-semibold" style={{ color: '#ddd' }}>MY ORDERS</span>
           </div>
         </div>
       </div>
@@ -89,7 +90,7 @@ function MyLeaseContent() {
         {tab === 'active' && (
           <div className="flex flex-col lg:flex-row gap-5">
 
-            {/* LEFT — dark lease status panel */}
+            {/* LEFT — dark order status panel */}
             <div
               className="lg:w-[280px] flex-shrink-0 rounded-2xl overflow-hidden"
               style={{ background: '#1A1A1A' }}
@@ -113,8 +114,11 @@ function MyLeaseContent() {
                       <span>{carColor}</span>
                     </div>
                   ) : null}
-                  <div className="text-xs mt-0.5" style={{ color: '#888' }}>
-                    AED 1,099 · MONTH · TERMS · 36 MONTHS
+                  <div className="text-xs mt-1 font-bold" style={{ color: '#E31937' }}>
+                    {carPrice}
+                  </div>
+                  <div className="text-xs" style={{ color: '#666' }}>
+                    PURCHASE PRICE
                   </div>
                 </div>
               </div>
@@ -167,6 +171,12 @@ function MyLeaseContent() {
                   </button>
                 ))}
               </div>
+
+              {/* Order reference */}
+              <div className="px-4 py-3 mx-4 mb-4 rounded-xl" style={{ background: '#111', border: '1px solid #2E2E2E' }}>
+                <div className="text-xs uppercase tracking-widest mb-1" style={{ color: '#555' }}>Order Ref</div>
+                <div className="text-xs font-black" style={{ color: '#888' }}>#XMC-2026-00142</div>
+              </div>
             </div>
 
             {/* RIGHT — content panel */}
@@ -179,7 +189,7 @@ function MyLeaseContent() {
 
         {tab === 'inactive' && (
           <div className="text-center py-20 text-gray-400 text-sm">
-            No inactive leases found.
+            No inactive orders found.
           </div>
         )}
 
@@ -188,17 +198,46 @@ function MyLeaseContent() {
   )
 }
 
-function QuotationApproval() {
+function OrderConfirmation() {
   return (
     <div className="p-8">
       <div className="mb-1">
         <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#888' }}>
-          QUOTATION APPROVAL
+          ORDER CONFIRMATION
         </div>
         <div className="text-sm font-semibold" style={{ color: '#E31937' }}>Pending Approval</div>
       </div>
 
       <div className="mt-6 mb-4">
+        {/* Order summary card */}
+        <div
+          className="rounded-xl mb-4 overflow-hidden"
+          style={{ border: '1px solid #eee' }}
+        >
+          <div className="px-4 py-3" style={{ background: '#fafafa', borderBottom: '1px solid #eee' }}>
+            <div className="text-xs font-bold uppercase tracking-widest" style={{ color: '#888' }}>Purchase Summary</div>
+          </div>
+          <div className="px-4 py-4 space-y-3">
+            {[
+              { label: 'Model', value: 'Xiaomi SU7 Standard' },
+              { label: 'Purchase Price', value: 'AED 129,900' },
+              { label: 'Registration', value: 'Free — included' },
+              { label: 'Warranty', value: '3-year comprehensive' },
+              { label: 'Service Package', value: '1st year included' },
+              { label: 'Delivery', value: 'Door-to-door · Dubai UAE' },
+            ].map(({ label, value }) => (
+              <div key={label} className="flex items-center justify-between">
+                <span className="text-xs" style={{ color: '#aaa' }}>{label}</span>
+                <span className="text-xs font-bold" style={{ color: '#111' }}>{value}</span>
+              </div>
+            ))}
+          </div>
+          <div className="px-4 py-3 flex items-center justify-between" style={{ background: '#111', borderTop: '1px solid #eee' }}>
+            <span className="text-xs font-bold uppercase tracking-wider text-white/60">Total</span>
+            <span className="text-sm font-black" style={{ color: '#E31937' }}>AED 129,900</span>
+          </div>
+        </div>
+
         {/* PDF download row */}
         <div
           className="flex items-center justify-between px-4 py-3 rounded-xl mb-4"
@@ -217,21 +256,21 @@ function QuotationApproval() {
               </svg>
             </div>
             <div>
-              <div className="text-sm font-bold" style={{ color: '#111' }}>QUOTATION.PDF</div>
-              <div className="text-xs" style={{ color: '#aaa' }}>Download to view</div>
+              <div className="text-sm font-bold" style={{ color: '#111' }}>ORDER_CONFIRMATION.PDF</div>
+              <div className="text-xs" style={{ color: '#aaa' }}>Download your order details</div>
             </div>
           </div>
           <button
             className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-lg transition-all hover:opacity-80"
             style={{ background: '#E31937', color: '#fff' }}
           >
-            Save Quotation
+            Download
           </button>
         </div>
 
         {/* Info text */}
         <p className="text-sm leading-relaxed" style={{ color: '#888' }}>
-          You have a pending quotation requiring your review and acceptance. The quotation is only valid for 7 days and will expire afterwards.
+          Your purchase order is pending confirmation from our team. You will receive an email once the order is approved. This offer is valid for 7 days from the date of submission.
         </p>
       </div>
 
@@ -241,13 +280,13 @@ function QuotationApproval() {
           className="flex-1 font-bold uppercase tracking-wider text-sm py-3.5 rounded-xl transition-all hover:bg-gray-100"
           style={{ border: '2px solid #ddd', color: '#555', background: '#fff' }}
         >
-          Decline quotation
+          Cancel Order
         </button>
         <button
           className="flex-1 font-bold uppercase tracking-wider text-sm py-3.5 rounded-xl text-white transition-all hover:opacity-90"
           style={{ background: '#E31937' }}
         >
-          Accept quotation
+          Confirm Order
         </button>
       </div>
     </div>
@@ -263,16 +302,27 @@ function DocumentVerification() {
         </div>
         <div className="text-sm font-semibold" style={{ color: '#aaa' }}>Pending Upload</div>
       </div>
-      <div className="mt-6 space-y-4">
+      <p className="text-sm mt-3 mb-6 leading-relaxed" style={{ color: '#999' }}>
+        Please upload the following documents to complete your purchase. All files are encrypted and handled securely.
+      </p>
+      <div className="mt-2 space-y-4">
         {['Emirates ID (Front)', 'Emirates ID (Back)', 'Driving Licence', 'Proof of Income'].map((doc) => (
           <div
             key={doc}
             className="flex items-center justify-between px-4 py-3 rounded-xl"
             style={{ background: '#f8f8f8', border: '1px dashed #ddd' }}
           >
-            <span className="text-sm font-semibold" style={{ color: '#333' }}>{doc}</span>
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: '#f0f0f0' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#888" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                </svg>
+              </div>
+              <span className="text-sm font-semibold" style={{ color: '#333' }}>{doc}</span>
+            </div>
             <button
-              className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-lg"
+              className="text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-lg transition-all hover:opacity-80"
               style={{ background: '#E31937', color: '#fff' }}
             >
               Upload
@@ -280,28 +330,52 @@ function DocumentVerification() {
           </div>
         ))}
       </div>
+      <p className="text-xs mt-6 leading-relaxed" style={{ color: '#bbb' }}>
+        Our team will verify your documents within 24 hours. You will be notified once verification is complete.
+      </p>
     </div>
   )
 }
 
-function VehiclePickup() {
+function VehicleCollection() {
   return (
     <div className="p-8">
       <div className="mb-1">
         <div className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#888' }}>
-          VEHICLE READY FOR PICKUP
+          VEHICLE COLLECTION
         </div>
-        <div className="text-sm font-semibold" style={{ color: '#aaa' }}>Pending Calendar</div>
+        <div className="text-sm font-semibold" style={{ color: '#aaa' }}>Pending Schedule</div>
       </div>
       <div className="mt-6">
         <p className="text-sm leading-relaxed mb-6" style={{ color: '#888' }}>
-          Your Xiaomi EV is ready for pickup. Please select a convenient date and location below.
+          Your Xiaomi car is ready for collection. Choose how you would like to receive it — home delivery or showroom collection at our Dubai Silicon Oasis centre.
         </p>
+
+        {/* Delivery options */}
+        <div className="space-y-3 mb-6">
+          {[
+            { title: 'Home Delivery', desc: 'We deliver your car directly to your address · Dubai & Abu Dhabi', icon: '🏠' },
+            { title: 'Showroom Collection', desc: 'Pick up in person · Dubai Silicon Oasis · Open 9am–9pm', icon: '🏢' },
+          ].map(({ title, desc, icon }) => (
+            <div
+              key={title}
+              className="flex items-center gap-4 px-4 py-4 rounded-xl cursor-pointer transition-all hover:border-[#E31937]"
+              style={{ background: '#fafafa', border: '1px solid #eee' }}
+            >
+              <span className="text-xl">{icon}</span>
+              <div>
+                <div className="text-sm font-bold" style={{ color: '#111' }}>{title}</div>
+                <div className="text-xs mt-0.5" style={{ color: '#aaa' }}>{desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
         <button
           className="w-full font-bold uppercase tracking-wider text-sm py-4 rounded-xl text-white transition-all hover:opacity-90"
           style={{ background: '#E31937' }}
         >
-          Schedule Pickup
+          Schedule Collection
         </button>
       </div>
     </div>

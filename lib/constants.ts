@@ -1,9 +1,9 @@
 export const BRAND = {
-  name: 'Xiaomi Leasing',
-  tagline: 'Drive Smarter with Xiaomi',
+  name: 'Xiaomi Cars',
+  tagline: 'Own Smarter with Xiaomi',
   phone: '+971 4 347 9888',
   whatsapp: '971543479888',
-  email: 'hello@xiaomileasing.ae',
+  email: 'hello@xiaomicars.ae',
   address: 'Dubai Silicon Oasis, Dubai, UAE',
   mapUrl: 'https://maps.google.com/?q=Dubai+Silicon+Oasis,Dubai,UAE',
   social: {
@@ -30,7 +30,7 @@ export const COLORS = {
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Our Cars', href: '/cars' },
-  { label: 'Why Lease', href: '/why-lease' },
+  { label: 'Why Buy', href: '/why-lease' },
   { label: 'About Us', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -45,47 +45,50 @@ export const BODY_TYPES = ['All', 'Sedan', 'SUV', 'Coupe', 'Crossover']
 export const CONDITIONS = ['All', 'New', 'Pre-Owned']
 export const BRANDS = ['All', 'Xiaomi']
 
-export const LEASE_OPTIONS = [
+export const FINANCE_OPTIONS = [
   {
     months: 12 as const,
     label: '12 Months',
-    description: 'Perfect for flexibility — ideal if your needs may change',
+    description: 'Short-term finance — lower commitment, higher monthly',
     highlight: false,
     inclusions: [
       'Comprehensive insurance',
       'Free registration',
-      '20,000 km/year',
+      'Unlimited mileage',
       '24/7 roadside assistance',
-      'Basic maintenance',
+      'Basic service package',
     ]
   },
   {
     months: 24 as const,
     label: '24 Months',
-    description: 'Most popular — the perfect balance of savings and flexibility',
+    description: 'Most popular — the perfect balance between cost and term',
     highlight: true,
     inclusions: [
       'Comprehensive insurance',
       'Free registration',
-      '20,000 km/year',
+      'Unlimited mileage',
       '24/7 roadside assistance',
-      'Full maintenance package',
-      'ILOE cover included',
+      'Full service package',
+      '3-year warranty included',
     ]
   },
   {
     months: 36 as const,
     label: '36 Months',
-    description: 'Best value per month — maximum savings for stable drivers',
+    description: 'Best monthly rate — lowest installment for your Xiaomi',
     highlight: false,
     inclusions: [
       'Comprehensive insurance',
       'Free registration',
-      '20,000 km/year',
+      'Unlimited mileage',
       '24/7 roadside assistance',
-      'Full maintenance package',
-      'ILOE cover included',
-      'Personal accident insurance',
+      'Full service package',
+      '5-year warranty included',
+      'Personal accident cover',
     ]
   }
 ]
+
+// Keep for backwards compatibility
+export const LEASE_OPTIONS = FINANCE_OPTIONS

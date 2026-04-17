@@ -31,6 +31,7 @@ export const CARS: Car[] = [
     topSpeed: '210 km/h',
     horsepower: '295 HP',
     battery: '73.6 kWh',
+    price: 129900,
     pricePerMonth: { 12: 1499, 24: 1299, 36: 1099 },
     images: [
       `${SU7_CDN}/6-1.png`,
@@ -65,6 +66,7 @@ export const CARS: Car[] = [
     topSpeed: '210 km/h',
     horsepower: '295 HP',
     battery: '94.3 kWh',
+    price: 154900,
     pricePerMonth: { 12: 1799, 24: 1599, 36: 1399 },
     images: [
       `${SU7_CDN}/6-2.png`,
@@ -99,6 +101,7 @@ export const CARS: Car[] = [
     topSpeed: '265 km/h',
     horsepower: '673 HP',
     battery: '101 kWh',
+    price: 189900,
     pricePerMonth: { 12: 2699, 24: 2399, 36: 2199 },
     images: [
       `${SU7_CDN}/6-7.png`,
@@ -139,6 +142,7 @@ export const CARS: Car[] = [
     topSpeed: '350 km/h',
     horsepower: '1526 HP',
     battery: '101 kWh',
+    price: 379900,
     pricePerMonth: { 12: 4999, 24: 4499, 36: 3999 },
     images: [
       '/images/cars/su7-ultra.jpg',
@@ -178,6 +182,7 @@ export const CARS: Car[] = [
     topSpeed: '253 km/h',
     horsepower: '681 HP',
     battery: '96.3 kWh',
+    price: 169900,
     pricePerMonth: { 12: 2199, 24: 1899, 36: 1699 },
     images: [
       'https://s1.xiaomiev.com/activity-outer-assets/0328/images/yu7_20250626/pc/9.6.png',
@@ -221,6 +226,7 @@ export const CARS: Car[] = [
     topSpeed: '220 km/h',
     horsepower: '299 HP',
     battery: '96.3 kWh',
+    price: 149900,
     pricePerMonth: { 12: 1899, 24: 1699, 36: 1499 },
     images: [
       'https://s1.xiaomiev.com/activity-outer-assets/0328/images/yu7_20250626/pc/9.3.png',
@@ -262,6 +268,7 @@ export const CARS: Car[] = [
     topSpeed: '253 km/h',
     horsepower: '840 HP',
     battery: '101 kWh',
+    price: 249900,
     pricePerMonth: { 12: 3599, 24: 3199, 36: 2899 },
     images: [
       'https://s1.xiaomiev.com/activity-outer-assets/0328/images/yu7_20250626/pc/9.5.png',
@@ -303,6 +310,7 @@ export const CARS: Car[] = [
     topSpeed: '210 km/h',
     horsepower: '295 HP',
     battery: '73.6 kWh',
+    price: 89900,
     pricePerMonth: { 12: 1199, 24: 999, 36: 849 },
     images: [
       '/images/cars/su7-silver.jpg',
@@ -331,7 +339,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: '1',
     name: 'Ahmed Al Mansouri',
     rating: 5,
-    review: 'Leasing my Xiaomi SU7 through Xiaomi Leasing UAE was seamless. The process was fast, transparent, and the monthly payment fits perfectly into my budget. The car itself is incredible — I get compliments every single day.',
+    review: 'Buying my Xiaomi SU7 Pro through Xiaomi Cars UAE was the smoothest car purchase I have ever made. The team was fast, transparent, and the flexible financing fit perfectly into my budget. I get compliments every single day.',
     car: 'Xiaomi SU7 Pro',
     location: 'Dubai, UAE',
     avatar: 'AM',
@@ -340,7 +348,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: '2',
     name: 'Sarah Thompson',
     rating: 5,
-    review: 'As a business professional, I needed a premium car without the ownership hassle. The SU7 Max is extraordinary and the 24-month lease includes everything — insurance, registration, maintenance. Truly hassle-free.',
+    review: 'As a business professional, owning the SU7 Max was a statement I had to make. Xiaomi Cars UAE made it effortless — insurance, registration, and warranty all sorted. I drive with full pride of ownership every morning.',
     car: 'Xiaomi SU7 Max',
     location: 'Abu Dhabi, UAE',
     avatar: 'ST',
@@ -349,7 +357,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: '3',
     name: 'Khalid Al Rashidi',
     rating: 5,
-    review: 'The Xiaomi YU7 is the perfect family SUV. Huge space, incredible technology, and the lease terms from Xiaomi Leasing UAE are unbeatable. 36 months with full maintenance included — zero stress.',
+    review: 'The Xiaomi YU7 is the perfect family SUV. Huge space, incredible technology, and the purchase experience with Xiaomi Cars UAE was effortless. The team handled everything — zero stress from enquiry to delivery.',
     car: 'Xiaomi YU7',
     location: 'Sharjah, UAE',
     avatar: 'KR',
@@ -358,7 +366,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: '4',
     name: 'Priya Nair',
     rating: 5,
-    review: 'I switched from a traditional car ownership model to leasing my SU7 and it was the best decision. No depreciation worries, full insurance, and the Xiaomi technology keeps getting better with every software update.',
+    review: 'Owning my Xiaomi SU7 was the best decision I have made. Full ownership, comprehensive warranty, and the technology keeps improving with every software update. Xiaomi Cars UAE made the whole process simple and fast.',
     car: 'Xiaomi SU7',
     location: 'Dubai, UAE',
     avatar: 'PN',
@@ -367,7 +375,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: '5',
     name: 'Mohammed Al Zaabi',
     rating: 5,
-    review: 'The SU7 Ultra is a dream car made real. Xiaomi Leasing UAE made it accessible with a flexible plan. Their team is professional, responsive, and genuinely committed to making the experience exceptional.',
+    review: 'The SU7 Ultra is a dream car made real. Xiaomi Cars UAE made owning it achievable with flexible financing. Their team is professional, responsive, and genuinely committed to making the ownership experience exceptional.',
     car: 'Xiaomi SU7 Ultra',
     location: 'Dubai, UAE',
     avatar: 'MZ',

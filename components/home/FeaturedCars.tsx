@@ -196,7 +196,7 @@ export default function FeaturedCars() {
                   transition={{ duration: 0.5, delay: 0.3 }}
                   style={{ color: 'rgba(0,0,0,0.35)', fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase' }}
                 >
-                  Leasing Options
+                  Our Models
                 </motion.span>
               </motion.div>
               <motion.h2
@@ -205,8 +205,8 @@ export default function FeaturedCars() {
                 transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 style={{ color: '#171a20', fontWeight: 200, fontSize: 'clamp(3rem, 9vw, 8.5rem)', letterSpacing: '-0.05em', lineHeight: 0.9 }}
               >
-                Drive.<br />
-                <span style={{ fontWeight: 700 }}>Not Buy.</span>
+                Own.<br />
+                <span style={{ fontWeight: 700 }}>Drive Bold.</span>
               </motion.h2>
             </div>
 
@@ -217,12 +217,12 @@ export default function FeaturedCars() {
               className="flex flex-col items-start lg:items-end gap-5 pb-2 flex-shrink-0"
             >
               <p className="lg:text-right" style={{ color: 'rgba(0,0,0,0.4)', fontSize: '12px', letterSpacing: '0.04em', maxWidth: '230px', lineHeight: 1.85 }}>
-                Zero down payment. Full insurance. Free registration. All in one monthly lease.
+                Yours to own. Flexible financing. Full warranty included. From AED 129,900.
               </p>
               <Link href="/cars" className="group inline-flex items-center gap-3">
                 <span className="text-black/40 group-hover:text-black/80 transition-colors duration-300"
                   style={{ fontSize: '14px', fontWeight: 400 }}>
-                  View Lease Plans
+                  View All Models
                 </span>
                 <span
                   className="flex items-center justify-center rounded-full group-hover:bg-black/90 group-hover:text-white group-hover:translate-x-1 group-hover:border-black/80"
@@ -393,15 +393,14 @@ export default function FeaturedCars() {
                   {/* Price block */}
                   <div>
                     <div className="flex items-baseline gap-1.5">
-                      <span style={{ color: 'rgba(255,255,255,0.65)', fontSize: '13px', fontWeight: 500 }}>AED</span>
+                      <span style={{ color: 'rgba(255,255,255,0.65)', fontSize: '13px', fontWeight: 500 }}>From AED</span>
                       <span className="text-white"
                         style={{ fontSize: 'clamp(2.4rem, 4.5vw, 3.5rem)', fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1 }}>
-                        {car.pricePerMonth[36].toLocaleString()}
+                        {car.price.toLocaleString()}
                       </span>
-                      <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '13px', fontWeight: 400 }}>/mo</span>
                     </div>
                     <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: '11px', marginTop: '4px', letterSpacing: '0.02em' }}>
-                      36 months · All-inclusive
+                      Or from AED {car.pricePerMonth[36].toLocaleString()}/mo · Flexible financing
                     </div>
                   </div>
 
@@ -422,7 +421,7 @@ export default function FeaturedCars() {
                       marginBottom: '2px',
                     }}
                   >
-                    Lease This Car
+                    Buy Now
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>

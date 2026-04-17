@@ -78,7 +78,7 @@ export default function CarsPage() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '40px' }}>
             <div style={{ height: '1px', width: '40px', background: '#E31937' }} />
             <span style={{ color: 'rgba(0,0,0,0.35)', fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase' }}>
-              Leasing Options
+              Our Models
             </span>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', gap: '24px' }}>
@@ -87,11 +87,11 @@ export default function CarsPage() {
               fontSize: 'clamp(3rem,8vw,8rem)',
               letterSpacing: '-0.048em', lineHeight: 0.86, margin: 0,
             }}>
-              Drive it.<br />
-              <span style={{ fontWeight: 800 }}>Don&apos;t buy it.</span>
+              Own it.<br />
+              <span style={{ fontWeight: 800 }}>Drive it.</span>
             </h1>
             <p style={{ color: 'rgba(0,0,0,0.45)', fontSize: '13px', lineHeight: 1.85, maxWidth: '280px', margin: 0 }}>
-              All Xiaomi EVs on flexible lease terms — insurance, maintenance, and registration included.
+              All Xiaomi cars available for purchase — flexible financing, full warranty, and free registration included.
             </p>
           </div>
         </div>
@@ -127,9 +127,9 @@ export default function CarsPage() {
 
             <FilterDivider />
 
-            {/* Lease term */}
+            {/* Finance term */}
             <FilterGroup>
-              <span style={{ fontSize: '10px', color: '#aaa', letterSpacing: '0.1em', textTransform: 'uppercase', marginRight: '4px' }}>Term</span>
+              <span style={{ fontSize: '10px', color: '#aaa', letterSpacing: '0.1em', textTransform: 'uppercase', marginRight: '4px' }}>Finance</span>
               {TERMS.map(t => (
                 <FilterPill key={t} active={term === t} accent onClick={() => setTerm(t)}>{t}mo</FilterPill>
               ))}
@@ -373,7 +373,7 @@ function CarCard({
               <div style={{ fontSize: '18px', fontWeight: 800, color: '#111', lineHeight: 1, letterSpacing: '-0.03em' }}>
                 AED {car.pricePerMonth[term].toLocaleString()}
               </div>
-              <div style={{ fontSize: '10px', color: '#bbb', marginTop: '2px' }}>/mo · {term}mo</div>
+              <div style={{ fontSize: '10px', color: '#bbb', marginTop: '2px' }}>/mo · {term}mo finance</div>
             </div>
           </div>
 
@@ -401,7 +401,7 @@ function CarCard({
               fontSize: '12px', fontWeight: 500, letterSpacing: '0.02em',
               color: hovered ? '#111' : '#999', transition: 'color 0.3s',
             }}>
-              Configure &amp; Lease
+              Configure &amp; Buy
             </span>
             <div style={{
               width: '30px', height: '30px', borderRadius: '50%',

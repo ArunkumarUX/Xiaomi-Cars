@@ -20,6 +20,7 @@ export interface Car {
   topSpeed?: string
   horsepower?: string
   battery?: string
+  price: number
   pricePerMonth: { 12: number; 24: number; 36: number }
   images: string[]
   colors: string[]

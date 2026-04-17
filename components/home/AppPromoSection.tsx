@@ -7,7 +7,7 @@ const APP_FEATURES = [
   {
     icon: Search,
     label: 'Browse Models',
-    description: 'Explore all Xiaomi EVs in our fleet',
+    description: 'Explore all Xiaomi cars in our fleet',
   },
   {
     icon: CalendarCheck,

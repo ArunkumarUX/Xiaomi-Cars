@@ -30,7 +30,7 @@ const STATS = [
   { value: 830,  suffix: 'km',  label: 'Max Range',         sub: 'Single charge · CLTC' },
   { value: 198,  suffix: 's',   label: '0–100 km/h',        sub: 'SU7 Ultra · 1.98 seconds', decimal: true },
   { value: 1526, suffix: 'HP',  label: 'Peak Power',        sub: 'Triple-motor hypercar' },
-  { value: 0,    suffix: '',    label: 'Down Payment',       sub: 'Zero upfront, ever' },
+  { value: 24,   suffix: 'hr',  label: 'Fast Approval',      sub: 'Enquiry confirmed in under 24 hours' },
 ]
 
 const PILLARS = [
@@ -331,7 +331,7 @@ export default function TechSection() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '28px' }}>
               <div style={{ height: '1px', width: '28px', background: 'rgba(255,255,255,0.3)' }} />
               <span style={{ fontSize: '9px', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.32em', textTransform: 'uppercase' }}>
-                Engineering
+                Engineering Excellence
               </span>
             </div>
             <h3 style={{
@@ -341,24 +341,27 @@ export default function TechSection() {
               margin: '0 0 36px',
             }}>
               Built in Beijing.<br />
-              <span style={{ fontWeight: 800 }}>Driven in Dubai.</span>
+              <span style={{ fontWeight: 800 }}>Owned in Dubai.</span>
             </h3>
-            <div style={{ display: 'flex', gap: '48px', flexWrap: 'wrap', marginBottom: '40px' }}>
-              {[['160-pt', 'Inspection'], ['3-yr', 'Warranty'], ['24/7', 'Support']].map(([val, lbl]) => (
+            <div style={{ display: 'flex', gap: '48px', flexWrap: 'wrap', marginBottom: '28px' }}>
+              {[['3-yr', 'Warranty'], ['Free', 'Registration'], ['24/7', 'Assistance']].map(([val, lbl]) => (
                 <div key={lbl}>
                   <div style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)', fontWeight: 800, color: '#fff', letterSpacing: '-0.03em', lineHeight: 1 }}>{val}</div>
                   <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.2em', textTransform: 'uppercase', marginTop: '5px' }}>{lbl}</div>
                 </div>
               ))}
             </div>
+            <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.3)', margin: '0 0 32px', lineHeight: 1.75, maxWidth: '400px' }}>
+              Every Xiaomi comes with a comprehensive 3-year warranty, free first-year UAE registration, and 24/7 roadside assistance — all included in your purchase price.
+            </p>
             <Link
-              href="/about"
+              href="/cars"
               className="group"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}
             >
               <span style={{ fontSize: '13px', color: 'rgba(255,255,255,0.45)' }}
                 className="group-hover:text-white transition-colors duration-300">
-                Learn about Xiaomi
+                See all models &amp; pricing
               </span>
               <span style={{
                 width: '34px', height: '34px', borderRadius: '50%',
@@ -383,54 +386,75 @@ export default function TechSection() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        style={{
-          background: '#fff',
+        style={{ background: '#fff', borderTop: '1px solid rgba(0,0,0,0.07)' }}
+      >
+        {/* Red accent bar at top */}
+        <div style={{ height: '3px', background: 'linear-gradient(90deg, #E31937 0%, rgba(227,25,55,0.12) 100%)' }} />
+
+        <div style={{
           padding: 'clamp(3rem,6vw,6rem) clamp(2rem,5vw,5rem)',
           display: 'flex', flexWrap: 'wrap', alignItems: 'center',
           justifyContent: 'space-between', gap: '32px',
-          borderTop: '1px solid rgba(0,0,0,0.07)',
-        }}
-      >
-        <div>
-          <p style={{ fontSize: '10px', color: 'rgba(0,0,0,0.3)', letterSpacing: '0.28em', textTransform: 'uppercase', margin: '0 0 12px' }}>
-            Ready to drive?
-          </p>
-          <h4 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 3rem)', fontWeight: 200, color: '#111', letterSpacing: '-0.04em', lineHeight: 1, margin: 0 }}>
-            Your Xiaomi EV.<br />
-            <span style={{ fontWeight: 800 }}>From AED 1,099/mo.</span>
-          </h4>
-        </div>
-        <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-          <Link
-            href="/cars"
-            style={{
-              display: 'inline-flex', alignItems: 'center',
-              background: '#E31937', color: '#fff',
-              fontSize: '13px', fontWeight: 600, letterSpacing: '0.04em',
-              padding: '14px 36px', borderRadius: '4px',
-              textDecoration: 'none',
-              transition: 'background 0.2s',
-            }}
-            className="hover:bg-[#C41630]"
-          >
-            Browse All Models
-          </Link>
-          <Link
-            href="/contact"
-            style={{
-              display: 'inline-flex', alignItems: 'center',
-              background: 'transparent',
-              border: '1px solid rgba(0,0,0,0.2)',
-              color: 'rgba(0,0,0,0.55)',
-              fontSize: '13px', fontWeight: 400, letterSpacing: '0.04em',
-              padding: '14px 36px', borderRadius: '4px',
-              textDecoration: 'none',
-              transition: 'border-color 0.2s, color 0.2s',
-            }}
-            className="hover:border-black hover:text-black"
-          >
-            Talk to Us
-          </Link>
+        }}>
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
+              <div style={{ height: '1px', width: '28px', background: '#E31937' }} />
+              <span style={{ fontSize: '10px', color: 'rgba(0,0,0,0.3)', letterSpacing: '0.32em', textTransform: 'uppercase' }}>
+                Ready to own?
+              </span>
+            </div>
+            <h4 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 3rem)', fontWeight: 200, color: '#111', letterSpacing: '-0.04em', lineHeight: 1, margin: '0 0 14px' }}>
+              Your Xiaomi Car.<br />
+              <span style={{ fontWeight: 800 }}>From AED 129,900.</span>
+            </h4>
+            <p style={{ fontSize: '12px', color: 'rgba(0,0,0,0.38)', margin: 0, lineHeight: 1.75 }}>
+              Or finance from{' '}
+              <span style={{ fontWeight: 600, color: '#E31937' }}>AED 1,099/mo</span>
+              {' '}over 36 months · Warranty &amp; registration included
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'flex-start' }}>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <Link
+                href="/cars"
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '10px',
+                  background: '#E31937', color: '#fff',
+                  fontSize: '13px', fontWeight: 600, letterSpacing: '0.04em',
+                  padding: '14px 36px', borderRadius: '4px',
+                  textDecoration: 'none', transition: 'background 0.2s',
+                }}
+                className="hover:bg-[#C41630]"
+              >
+                Browse Models
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </Link>
+              <Link
+                href="/contact"
+                style={{
+                  display: 'inline-flex', alignItems: 'center',
+                  background: 'transparent',
+                  border: '1px solid rgba(0,0,0,0.18)',
+                  color: 'rgba(0,0,0,0.55)',
+                  fontSize: '13px', fontWeight: 500, letterSpacing: '0.04em',
+                  padding: '14px 36px', borderRadius: '4px',
+                  textDecoration: 'none', transition: 'border-color 0.2s, color 0.2s',
+                }}
+                className="hover:border-black hover:text-black"
+              >
+                Get a Quote
+              </Link>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#22c55e', flexShrink: 0 }} />
+              <span style={{ fontSize: '11px', color: 'rgba(0,0,0,0.35)' }}>
+                Approval in under 24 hours · 5 models available
+              </span>
+            </div>
+          </div>
         </div>
       </motion.div>
 

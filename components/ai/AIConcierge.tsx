@@ -17,55 +17,55 @@ interface Message {
 
 const QUICK_REPLIES = [
   "What's the best family car?",
-  'How does leasing work?',
+  'How does buying work?',
   'Compare SU7 vs YU7',
-  "What's included in a lease?",
+  "What's included with purchase?",
 ]
 
 function generateResponse(input: string): string {
   const msg = input.toLowerCase()
 
   if (/su7 ultra|ultra/.test(msg)) {
-    return "The SU7 Ultra is Xiaomi's hypercar-level sedan — 1,526 HP, 0-100 in 1.98 seconds, and a Nürburgring record. Available from AED 3,999/month on a 36-month lease. A true icon for driving enthusiasts."
+    return "The SU7 Ultra is Xiaomi's hypercar-level sedan — 1,526 HP, 0-100 in 1.98 seconds, and a Nürburgring record. Purchase price from AED 379,900 — with flexible financing available. A true icon for driving enthusiasts."
   }
   if (/su7 max|max/.test(msg)) {
-    return "The SU7 Max delivers dual-motor AWD with 673 HP and a 2.78s 0-100 sprint, all with an 800 km range. Starting at AED 2,199/month (36 months) — perfect for supercar performance in a practical sedan."
+    return "The SU7 Max delivers dual-motor AWD with 673 HP and a 2.78s 0-100 sprint, all with an 800 km range. Purchase price from AED 189,900 — or finance from AED 2,199/month over 36 months."
   }
   if (/su7 pro|pro/.test(msg)) {
-    return "The SU7 Pro is built for range: 830 km CLTC on a single charge with the CATL Qilin battery. If you cover long distances, this is your car. From AED 1,399/month on 36 months."
+    return "The SU7 Pro is built for range: 830 km CLTC on a single charge with the CATL Qilin battery. If you cover long distances, this is your car. Purchase from AED 154,900, or finance from AED 1,399/month."
   }
   if (/su7|sedan/.test(msg)) {
-    return "The SU7 lineup covers every need — Standard from AED 1,099/month, Pro for 830 km range, Max for supercar performance, Ultra for a Nürburgring record. Which variant interests you most?"
+    return "The SU7 lineup covers every need — Standard from AED 129,900, Pro for 830 km range, Max for supercar performance, Ultra for a Nürburgring record. All available with flexible financing. Which variant interests you most?"
   }
   if (/yu7|suv|family|kids|children|space/.test(msg)) {
-    return "The Xiaomi YU7 is our flagship SUV — 681 HP dual-motor AWD, 760 km range, air suspension, and a stunning 3-screen cockpit. Perfect for families. From AED 1,699/month on 36 months."
+    return "The Xiaomi YU7 is our flagship SUV — 681 HP dual-motor AWD, 760 km range, air suspension, and a stunning 3-screen cockpit. Perfect for families. Purchase from AED 169,900 with financing available."
   }
   if (/compare|vs|versus|difference/.test(msg)) {
     return "The SU7 is a sleek performance sedan ideal for city and highway driving. The YU7 is a premium SUV with more space, higher seating, and air suspension — ideal for families. Both run Xiaomi HyperOS. What matters most — space or performance?"
   }
   if (/price|cost|budget|afford|month|aed/.test(msg)) {
-    return "Leases start from AED 1,099/month for the SU7 Standard on 36 months — all-inclusive with insurance, registration, and full maintenance. The YU7 starts at AED 1,699/month. No down payment on any model."
+    return "Prices start from AED 129,900 for the SU7 Standard — with comprehensive warranty, free registration, and 24/7 roadside assistance included. Flexible financing from AED 1,099/month over 36 months. The YU7 starts at AED 169,900."
   }
   if (/range|battery|charge|km|kilometre/.test(msg)) {
     return "Range by model: SU7 Standard (700 km), SU7 Pro (830 km), SU7 Max (800 km), SU7 Ultra (630 km), YU7 (760 km). All CLTC figures. Even the lowest range is ample for UAE daily driving."
   }
-  if (/lease|how|process|sign|contract|start/.test(msg)) {
-    return "Leasing is simple: choose your model and term (12, 24 or 36 months), fill in your details, and our team contacts you within 24 hours. Monthly fee covers comprehensive insurance, free registration, 24/7 roadside assistance, and full maintenance."
+  if (/buy|how|process|purchase|sign|contract|start/.test(msg)) {
+    return "Buying is simple: choose your model and preferred finance term (12, 24 or 36 months), fill in your details, and our team confirms pricing and availability within 24 hours. Every purchase includes a comprehensive warranty, free registration, and 24/7 roadside assistance."
   }
-  if (/include|inclusive|insurance|maintenance|registration/.test(msg)) {
-    return "Every lease includes: comprehensive insurance, free UAE registration, 24/7 roadside assistance, and a full maintenance package. One monthly payment — nothing else to worry about."
+  if (/include|inclusive|warranty|maintenance|registration/.test(msg)) {
+    return "Every purchase includes: a comprehensive warranty, free UAE first-year registration, 24/7 roadside assistance, and a full service package. One price — nothing else to worry about."
   }
   if (/performance|fast|sport|speed|0-100|acceleration/.test(msg)) {
     return "For performance: SU7 Max (673 HP, 2.78s 0-100) and SU7 Ultra (1,526 HP, 1.98s 0-100) are exceptional. The YU7 also delivers 681 HP with a 3.23s sprint. What's your priority — daily driving or hypercar-level thrills?"
   }
   if (/tech|technology|software|hyper|hyperos|screen|display/.test(msg)) {
-    return "All Xiaomi EVs run HyperOS — deeply integrated with your Xiaomi devices. Every model includes a 16.1\" 3K display, OTA updates, and NOA autonomous driving assistance. The YU7 adds a full 3-screen cockpit."
+    return "All Xiaomi cars run HyperOS — deeply integrated with your Xiaomi devices. Every model includes a 16.1\" 3K display, OTA updates, and NOA autonomous driving assistance. The YU7 adds a full 3-screen cockpit."
   }
   if (/hello|hi|hey|good/.test(msg)) {
-    return "Hello. I'm Xara, your Xiaomi leasing advisor. Tell me what you're looking for and I'll find the right model and lease term for you."
+    return "Hello. I'm Xara, your Xiaomi AI advisor. Tell me what you're looking for and I'll find the right model and purchase option for you."
   }
 
-  return "I'd suggest starting with our SU7 lineup — from the accessible SU7 Standard at AED 1,099/month to the record-breaking SU7 Ultra. If space matters, the YU7 SUV is exceptional. Want me to walk you through the options?"
+  return "I'd suggest starting with our SU7 lineup — from the accessible SU7 Standard at AED 129,900 to the record-breaking SU7 Ultra. If space matters, the YU7 SUV is exceptional. Want me to walk you through the options?"
 }
 
 function formatTime(date: Date): string {
@@ -81,7 +81,7 @@ function generateId(): string {
 const INITIAL_MESSAGE: Message = {
   id: 'init',
   role: 'ai',
-  text: "Hi, I'm Xara — your Xiaomi AI advisor. Tell me about your lifestyle or ask about any model and I'll find your perfect lease.",
+  text: "Hi, I'm Xara — your Xiaomi AI advisor. Tell me about your lifestyle or ask about any model and I'll find your perfect Xiaomi to own.",
   timestamp: new Date(),
   showSuggestions: true,
 }
@@ -353,7 +353,7 @@ export default function AIConcierge({ hideFab = false }: { hideFab?: boolean }) 
                 }} />
               </div>
               <div style={{ fontSize: '10px', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.18em', textTransform: 'uppercase', marginTop: '1px' }}>
-                AI Advisor · Xiaomi Leasing
+                AI Advisor · Xiaomi Cars UAE
               </div>
             </div>
             <button className="xara-close-btn" onClick={() => setIsOpen(false)} aria-label="Close chat">

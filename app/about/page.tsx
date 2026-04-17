@@ -4,8 +4,8 @@ import { ArrowRight, Zap, Globe, Award, Users } from 'lucide-react'
 const MILESTONES = [
   { year: '2010', event: 'Xiaomi founded in Beijing by Lei Jun and 7 co-founders' },
   { year: '2014', event: 'Listed as the world\'s 3rd most valuable tech startup' },
-  { year: '2021', event: 'Xiaomi announces entry into electric vehicle development' },
-  { year: '2024', event: 'Xiaomi SU7 officially launched — fastest EV debut in history' },
+  { year: '2021', event: 'Xiaomi announces entry into car development' },
+  { year: '2024', event: 'Xiaomi SU7 officially launched — fastest car debut in history' },
   { year: '2024', event: 'SU7 Ultra sets Nürburgring Nordschleife lap record' },
   { year: '2025', event: 'Xiaomi YU7 SUV launched · Xiaomi Leasing UAE established' },
 ]
@@ -14,7 +14,7 @@ const STATS = [
   { icon: Globe, value: '100+', label: 'Countries' },
   { icon: Users, value: '35M+', label: 'Loyal Fans Worldwide' },
   { icon: Zap, value: '1526 HP', label: 'SU7 Ultra Output' },
-  { icon: Award, value: '#1', label: 'EV Debut Record 2024' },
+  { icon: Award, value: '#1', label: 'Car Debut Record 2024' },
 ]
 
 export default function AboutPage() {
@@ -32,7 +32,7 @@ export default function AboutPage() {
             <span className="text-[#E31937]">Mobility</span>
           </h1>
           <p className="text-gray-400 text-xl max-w-2xl leading-relaxed">
-            Xiaomi is redefining what an electric vehicle can be. And Xiaomi Leasing UAE
+            Xiaomi is redefining what a car can be. And Xiaomi Cars UAE
             is bringing that revolution to the streets of Dubai.
           </p>
         </div>
@@ -74,8 +74,8 @@ export default function AboutPage() {
                 </p>
                 <p>
                   In 2021, Xiaomi CEO Lei Jun made a bold announcement: Xiaomi would enter the
-                  electric vehicle industry. Three years later, the Xiaomi SU7 was born —
-                  finding hundreds of thousands of owners and breaking every record in China&apos;s EV market.
+                  automotive industry. Three years later, the Xiaomi SU7 was born —
+                  finding hundreds of thousands of owners and breaking every record in China&apos;s automotive market.
                 </p>
                 <p>
                   The Xiaomi SU7 Ultra then went further, setting a production car lap record at
@@ -106,13 +106,13 @@ export default function AboutPage() {
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#E31937]/5 rounded-full blur-3xl" />
             <div className="relative z-10 max-w-2xl">
               <h2 className="text-4xl font-black text-white mb-4">
-                Xiaomi Leasing <span className="text-[#E31937]">UAE</span>
+                Xiaomi Cars <span className="text-[#E31937]">UAE</span>
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                Xiaomi Leasing UAE is the authorised electric vehicle leasing platform for
+                Xiaomi Cars UAE is the authorised car sales platform for
                 Xiaomi vehicles in the United Arab Emirates. We are committed to making
                 Xiaomi&apos;s revolutionary technology accessible to everyone in the UAE through
-                flexible, transparent, and fully managed lease plans.
+                flexible, transparent, and fully managed purchase plans.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link

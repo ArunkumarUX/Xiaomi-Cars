@@ -45,7 +45,7 @@ const css = `
     transition: transform 0.2s ease;
   }
 
-  /* ── Lease Now (primary) ── */
+  /* ── Buy Now (primary) ── */
   .fhub-lease {
     background: #E31937;
     box-shadow: 0 4px 20px rgba(227,25,55,0.45), 0 1px 4px rgba(0,0,0,0.2);
@@ -124,11 +124,11 @@ export default function FloatingHub() {
           <span className="fhub-ai-label">AI Advisor</span>
         </button>
 
-        {/* Lease Now */}
+        {/* Buy Now */}
         <button
           className="fhub-pill fhub-lease"
           onClick={() => trigger('open-lease-chatbot')}
-          aria-label="Start lease application"
+          aria-label="Start purchase enquiry"
         >
           <span className="fhub-pill-icon">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -136,7 +136,7 @@ export default function FloatingHub() {
               <circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/>
             </svg>
           </span>
-          <span className="fhub-lease-label">Lease Now</span>
+          <span className="fhub-lease-label">Buy Now</span>
         </button>
 
       </div>

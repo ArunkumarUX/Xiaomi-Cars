@@ -9,11 +9,11 @@ const SU7_CDN = 'https://s1.xiaomiev.com/activity-outer-assets/0328/images/su7_2
 const YU7_CDN = 'https://s1.xiaomiev.com/activity-outer-assets/0328/images/yu7_20250626/pc'
 
 const CARS = [
-  { id: 'su7',       slug: 'xiaomi-su7-standard', name: 'SU7',       badge: 'Best Value',  price: 1099, range: 700, accel: '5.28s', image: `${SU7_CDN}/6-7.png` },
-  { id: 'su7-pro',   slug: 'xiaomi-su7-pro',      name: 'SU7 Pro',   badge: 'Max Range',   price: 1399, range: 830, accel: '5.28s', image: `${SU7_CDN}/6-3.png` },
-  { id: 'su7-max',   slug: 'xiaomi-su7-max',       name: 'SU7 Max',   badge: 'Performance', price: 2199, range: 800, accel: '2.78s', image: `${SU7_CDN}/6-2.png` },
-  { id: 'su7-ultra', slug: 'xiaomi-su7-ultra',     name: 'SU7 Ultra', badge: 'Hypercar',    price: 3999, range: 630, accel: '1.98s', image: `${SU7_CDN}/6-8.png` },
-  { id: 'yu7',       slug: 'xiaomi-yu7',           name: 'YU7',       badge: 'Family SUV',  price: 1699, range: 760, accel: '3.23s', image: `${YU7_CDN}/9.1.png` },
+  { id: 'su7',       slug: 'xiaomi-su7-standard', name: 'SU7',       badge: 'Best Value',  price: 129900, range: 700, accel: '5.28s', image: `${SU7_CDN}/6-7.png` },
+  { id: 'su7-pro',   slug: 'xiaomi-su7-pro',      name: 'SU7 Pro',   badge: 'Max Range',   price: 154900, range: 830, accel: '5.28s', image: `${SU7_CDN}/6-3.png` },
+  { id: 'su7-max',   slug: 'xiaomi-su7-max',       name: 'SU7 Max',   badge: 'Performance', price: 189900, range: 800, accel: '2.78s', image: `${SU7_CDN}/6-2.png` },
+  { id: 'su7-ultra', slug: 'xiaomi-su7-ultra',     name: 'SU7 Ultra', badge: 'Hypercar',    price: 379900, range: 630, accel: '1.98s', image: `${SU7_CDN}/6-8.png` },
+  { id: 'yu7',       slug: 'xiaomi-yu7',           name: 'YU7',       badge: 'Family SUV',  price: 169900, range: 760, accel: '3.23s', image: `${YU7_CDN}/9.1.png` },
 ] as const
 type Car = typeof CARS[number]
 
@@ -62,12 +62,12 @@ const QUESTIONS = [
   },
   {
     stage: 'q4' as Stage,
-    prompt: "What's your monthly lease budget?",
+    prompt: "What's your purchase budget?",
     opts: [
-      { v: 'tier1', t: 'AED 1,099 – 1,500', s: 'Smart entry tier' },
-      { v: 'tier2', t: 'AED 1,500 – 2,500', s: 'Premium tier' },
-      { v: 'tier3', t: 'AED 2,500 – 3,500', s: 'Performance tier' },
-      { v: 'tier4', t: 'AED 3,500+',        s: 'No compromises' },
+      { v: 'tier1', t: 'AED 100k – 160k',  s: 'Smart entry tier' },
+      { v: 'tier2', t: 'AED 160k – 200k',  s: 'Premium tier' },
+      { v: 'tier3', t: 'AED 200k – 350k',  s: 'Performance tier' },
+      { v: 'tier4', t: 'AED 350k+',        s: 'No compromises' },
     ],
   },
 ]
@@ -529,7 +529,7 @@ function ResultsStage({ best, second, onClose, onRetake }: { best: Car; second: 
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '0 24px 24px' }}>
           <div style={{ fontSize: 10, letterSpacing: '0.22em', color: '#E31937', textTransform: 'uppercase', fontFamily: 'Inter, -apple-system, sans-serif', marginBottom: 6 }}>Your Perfect Match</div>
           <div style={{ fontSize: 'clamp(1.6rem,3.5vw,2.4rem)', fontWeight: 800, color: '#fff', fontFamily: 'Inter, -apple-system, sans-serif', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: 6 }}>Xiaomi {best.name}</div>
-          <div style={{ fontSize: 16, fontWeight: 500, color: 'rgba(255,255,255,0.7)', fontFamily: 'Inter, -apple-system, sans-serif' }}>AED {best.price.toLocaleString()}<span style={{ fontSize: 11, opacity: 0.6 }}>/mo</span></div>
+          <div style={{ fontSize: 16, fontWeight: 500, color: 'rgba(255,255,255,0.7)', fontFamily: 'Inter, -apple-system, sans-serif' }}>AED {best.price.toLocaleString()}</div>
           <div style={{ marginTop: 14, display: 'flex', alignItems: 'center', gap: 10 }}>
             <span style={{ fontSize: 9, fontFamily: 'Inter, -apple-system, sans-serif', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>AI Match</span>
             <div style={{ flex: 1, height: 3, background: 'rgba(255,255,255,0.12)', borderRadius: 2, overflow: 'hidden' }}>
@@ -563,14 +563,14 @@ function ResultsStage({ best, second, onClose, onRetake }: { best: Car; second: 
           {/* 4 action buttons */}
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55 }}
             style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
-            {/* Lease Now */}
+            {/* Buy Now */}
             <button
               onClick={() => { onClose(); window.dispatchEvent(new CustomEvent('open-lease-chatbot')) }}
               style={{ display: 'flex', flexDirection: 'column', gap: 5, padding: '13px 12px 11px', background: 'linear-gradient(135deg,#E31937,#C41630)', borderRadius: 4, border: 'none', cursor: 'pointer', boxShadow: '0 4px 20px rgba(232,33,39,0.3)', transition: 'transform 0.2s, box-shadow 0.2s', textAlign: 'left' }}
               onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.transform = 'translateY(-2px)'; (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 8px 28px rgba(232,33,39,0.45)' }}
               onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLButtonElement).style.boxShadow = '0 4px 20px rgba(232,33,39,0.3)' }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/><rect x="7" y="15" width="10" height="4" rx="2"/></svg>
-              <span style={{ fontSize: 12, fontWeight: 700, color: '#fff', fontFamily: 'Inter, -apple-system, sans-serif', lineHeight: 1.2 }}>Lease Now</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: '#fff', fontFamily: 'Inter, -apple-system, sans-serif', lineHeight: 1.2 }}>Buy Now</span>
               <span style={{ fontSize: 9, color: 'rgba(255,255,255,0.72)', fontFamily: 'Inter, -apple-system, sans-serif' }}>Start your journey</span>
             </button>
             {/* Test Drive */}
@@ -612,7 +612,7 @@ function ResultsStage({ best, second, onClose, onRetake }: { best: Car; second: 
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.85)', fontFamily: 'Inter, -apple-system, sans-serif' }}>Xiaomi {second.name}</span>
                 <span style={{ fontSize: 8, fontWeight: 600, color: '#E31937', letterSpacing: '0.06em', fontFamily: 'Inter, -apple-system, sans-serif', background: 'rgba(232,33,39,0.12)', border: '1px solid rgba(232,33,39,0.25)', borderRadius: 4, padding: '1px 5px' }}>#2 MATCH</span>
               </div>
-              <div style={{ fontSize: 10, color: '#E31937', fontWeight: 600, fontFamily: 'Inter, -apple-system, sans-serif' }}>AED {second.price.toLocaleString()}/mo</div>
+              <div style={{ fontSize: 10, color: '#E31937', fontWeight: 600, fontFamily: 'Inter, -apple-system, sans-serif' }}>AED {second.price.toLocaleString()}</div>
             </div>
             <Link href={`/cars/${second.slug}`} onClick={onClose} style={{ marginRight: 12, fontSize: 10, color: 'rgba(255,255,255,0.4)', textDecoration: 'none', fontFamily: 'Inter, -apple-system, sans-serif', whiteSpace: 'nowrap', padding: '5px 8px', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 7, transition: 'border-color 0.2s, color 0.2s' }}
               onMouseEnter={e => { const el = e.currentTarget as HTMLAnchorElement; el.style.borderColor = '#E31937'; el.style.color = '#E31937' }}

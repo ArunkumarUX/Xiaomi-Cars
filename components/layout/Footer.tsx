@@ -16,11 +16,11 @@ const FOOTER_LINKS = [
     ],
   },
   {
-    heading: 'Leasing',
+    heading: 'Buying',
     links: [
       { label: 'Browse Cars',       href: '/cars' },
-      { label: 'Why Lease',         href: '/why-lease' },
-      { label: 'My Lease',          href: '/my-lease' },
+      { label: 'Why Buy',           href: '/why-lease' },
+      { label: 'My Orders',         href: '/my-lease' },
       { label: 'How It Works',      href: '/#how-it-works' },
     ],
   },
@@ -51,7 +51,7 @@ export default function Footer() {
               <img src="/images/xiaomi-logo.svg" alt="Xiaomi" className="h-8 w-auto" />
               <div>
                 <div style={{ color: 'rgba(255,255,255,0.85)', fontSize: '10px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.22em', lineHeight: 1 }}>
-                  EV Leasing
+                  Xiaomi Cars
                 </div>
                 <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: '9px', letterSpacing: '0.15em', lineHeight: 1, marginTop: '4px' }}>
                   Dubai · UAE
@@ -59,7 +59,7 @@ export default function Footer() {
               </div>
             </div>
             <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '13px', lineHeight: 1.9, maxWidth: '250px', marginBottom: '32px', letterSpacing: '0.01em' }}>
-              Lease a Xiaomi EV with zero down payment, full insurance, and free registration.
+              Own a Xiaomi car with flexible financing, full warranty, and free registration.
             </p>
             {/* Social */}
             <div className="flex gap-6">
@@ -151,7 +151,7 @@ export default function Footer() {
         {/* Bottom row */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '11px', letterSpacing: '0.08em' }}>
-            © 2026 Xiaomi EV Leasing UAE · All rights reserved
+            © 2026 Xiaomi Cars UAE · All rights reserved
           </p>
           <div style={{
             fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.18em',

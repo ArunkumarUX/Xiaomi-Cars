@@ -29,7 +29,7 @@ const REQUIREMENTS = [
   {
     num: '03',
     title: 'Age 25 or above',
-    desc: 'Minimum age of 25 years at the time of lease application',
+    desc: 'Minimum age of 25 years at the time of purchase or financing application',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E31937" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <circle cx="12" cy="8" r="4"/>
@@ -51,7 +51,7 @@ const REQUIREMENTS = [
   {
     num: '05',
     title: 'UAE Bank Account',
-    desc: 'Active UAE bank account for direct debit monthly payments',
+    desc: 'Active UAE bank account for financing or direct purchase payments',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E31937" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <polyline points="3 7 12 2 21 7 21 17 12 22 3 17 3 7"/>
@@ -76,7 +76,7 @@ export default function EligibilitySection() {
             <div className="flex items-center gap-5 mb-10">
               <div style={{ height: '1px', width: '40px', background: '#E31937' }} />
               <span style={{ color: 'rgba(0,0,0,0.35)', fontSize: '10px', letterSpacing: '0.32em', textTransform: 'uppercase' }}>
-                Eligibility
+                Requirements
               </span>
             </div>
             <motion.h2
@@ -98,7 +98,7 @@ export default function EligibilitySection() {
             className="flex-shrink-0 lg:max-w-[280px]"
             style={{ color: 'rgba(0,0,0,0.45)', fontSize: '13px', lineHeight: 1.85 }}
           >
-            Most UAE residents qualify within minutes. Five straightforward checks — and our team handles everything else.
+            Most UAE residents qualify within minutes. Five straightforward requirements — and our team handles everything else from there.
           </motion.p>
         </div>
       </div>
@@ -162,7 +162,7 @@ export default function EligibilitySection() {
               textDecoration: 'none',
             }}
           >
-            Apply Now
+            Buy Now
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -171,7 +171,7 @@ export default function EligibilitySection() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#22c55e', flexShrink: 0 }} />
             <span style={{ fontSize: '12px', color: 'rgba(0,0,0,0.4)', lineHeight: 1.5 }}>
-              Approval in under 24 hours · No credit check required
+              Approval in under 24 hours · Flexible financing available
             </span>
           </div>
         </div>

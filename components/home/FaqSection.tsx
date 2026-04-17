@@ -5,24 +5,24 @@ import { motion } from 'framer-motion'
 
 const FAQS = [
   {
-    q: 'Who can lease a Xiaomi EV in Dubai?',
-    a: 'UAE residents with a valid Emirates ID, a driving licence held for at least one year, confirmed employment or business ownership, and an active UAE bank account. Minimum age is 25.',
+    q: 'Who can buy a Xiaomi car in Dubai?',
+    a: 'UAE residents and citizens with a valid Emirates ID, a UAE driving licence, and an active UAE bank account or valid payment method. Minimum age is 25 for financing. Cash purchases are welcome from any eligible buyer.',
   },
   {
-    q: "What's included in every lease?",
-    a: 'Free vehicle registration, comprehensive insurance (third-party, natural disaster, and personal accident cover), full scheduled maintenance, 24/7 roadside assistance, and a 20,000 km annual mileage allowance — all in one fixed monthly payment.',
+    q: "What's included with every purchase?",
+    a: 'Free vehicle registration, comprehensive warranty coverage, full scheduled maintenance for the first year, 24/7 roadside assistance, and a dedicated after-sales support team — all included in your purchase price.',
   },
   {
-    q: 'Which lease terms are available?',
-    a: 'We offer 12, 24, and 36-month terms. The 24-month plan is the most popular — balancing optimal flexibility with the lowest monthly rate.',
+    q: 'What financing options are available?',
+    a: 'We offer flexible financing over 12, 24, and 36 months with competitive rates. The 36-month plan gives you the lowest monthly installment. Cash purchases and bank transfers are also accepted.',
   },
   {
-    q: 'How are payments made?',
-    a: 'Fixed equal monthly payments via direct debit, credit card, or UAE bank transfer. No hidden fees, no balloon payments — ever.',
+    q: 'How are installment payments made?',
+    a: 'Fixed equal monthly installments via direct debit or UAE bank transfer. No hidden fees, no balloon payments — your price is agreed upfront and never changes.',
   },
   {
-    q: 'Can I upgrade at the end of my lease?',
-    a: 'Yes. At lease-end you can seamlessly transition into the latest Xiaomi model, extend your current lease, or simply return the vehicle — with zero obligation to purchase.',
+    q: 'Can I trade in my car later?',
+    a: 'Yes. As a Xiaomi owner you can trade in your vehicle at any time toward a newer model. Our team will provide a fair market valuation and apply it directly to your next purchase.',
   },
 ]
 

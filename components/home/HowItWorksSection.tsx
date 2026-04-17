@@ -6,28 +6,28 @@ const STEPS = [
   {
     number: '01',
     title: 'Browse',
-    desc: 'Explore our full range of Xiaomi electric vehicles. Filter by model, body type, or budget.',
+    desc: 'Explore our full range of Xiaomi cars. Filter by model, body type, or budget.',
     image: 'https://s1.xiaomiev.com/activity-outer-assets/0328/images/su7_20260319/pc/6-1.png',
     icon: 'search',
   },
   {
     number: '02',
     title: 'Choose',
-    desc: 'Select your preferred model and lease duration — 12, 24, or 36 months.',
+    desc: 'Select your preferred model and financing term — 12, 24, or 36 months.',
     image: 'https://s1.xiaomiev.com/activity-outer-assets/0328/images/su7_20260319/pc/6-3.png',
     icon: 'car',
   },
   {
     number: '03',
     title: 'Apply',
-    desc: 'Submit your details online. Our team reviews your application within 24 hours.',
+    desc: 'Submit your purchase enquiry online. Our team confirms pricing and availability within 24 hours.',
     image: 'https://s1.xiaomiev.com/activity-outer-assets/0328/images/su7_20260319/pc/6-7.png',
     icon: 'clipboard',
   },
   {
     number: '04',
     title: 'Drive',
-    desc: 'Sign your agreement, collect your Xiaomi EV, and start driving the future today.',
+    desc: 'Sign your purchase agreement, collect your Xiaomi car, and start driving the future today.',
     image: 'https://s1.xiaomiev.com/activity-outer-assets/0328/images/yu7_20250626/pc/9.1.png',
     icon: 'key',
   },
@@ -212,14 +212,14 @@ export default function HowItWorksSection() {
               }}
             >
               From browse<br />
-              <span style={{ fontWeight: 800 }}>to driving.</span>
+              <span style={{ fontWeight: 800 }}>to owning.</span>
             </h2>
           </div>
           <p
             style={{ color: 'rgba(0,0,0,0.45)', fontSize: '13px', lineHeight: 1.85, letterSpacing: '0.01em' }}
             className="flex-shrink-0 lg:max-w-[260px]"
           >
-            Four straightforward steps from discovering your Xiaomi EV to picking up the keys — all managed online in under 24 hours.
+            Four straightforward steps from discovering your Xiaomi car to owning it — all managed online in under 24 hours.
           </p>
         </div>
       </div>

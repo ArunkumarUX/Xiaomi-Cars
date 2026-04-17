@@ -51,7 +51,7 @@ export default function ContactSection() {
               letterSpacing: '0.01em',
             }}
           >
-            Our team will prepare a personalised lease offer within 24 hours. Fill in your details and a dedicated advisor will reach out to find the perfect plan for you.
+            Our team will prepare a personalised quote and financing options within 24 hours. Fill in your details and a dedicated advisor will reach out to find the perfect Xiaomi for you.
           </p>
         </div>
       </div>
@@ -100,16 +100,16 @@ export default function ContactSection() {
                 {/* Headline */}
                 <h3 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 0.95, margin: '0 0 16px', letterSpacing: '-0.04em' }}>
                   <span style={{ fontWeight: 200, color: '#fff', display: 'block' }}>Start your</span>
-                  <span style={{ fontWeight: 800, color: '#fff', display: 'block' }}>lease journey.</span>
+                  <span style={{ fontWeight: 800, color: '#fff', display: 'block' }}>ownership journey.</span>
                 </h3>
 
                 <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.45)', margin: '0 0 32px', lineHeight: 1.7, maxWidth: '360px' }}>
-                  Our AI advisor guides you through the entire leasing process — from choosing your car to scheduling pickup — in minutes.
+                  Our AI advisor guides you through the entire purchase process — from choosing your car to scheduling delivery — in minutes.
                 </p>
 
                 {/* Feature chips */}
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
-                  {['Instant approval', 'Zero down payment', '5 models', 'All-inclusive'].map((label) => (
+                  {['Fast approval', 'Flexible financing', '5 models', 'Warranty included'].map((label) => (
                     <span key={label} style={{
                       background: 'rgba(255,255,255,0.07)',
                       border: '1px solid rgba(255,255,255,0.1)',
@@ -155,7 +155,7 @@ export default function ContactSection() {
                     el.style.boxShadow = '0 8px 32px rgba(227,25,55,0.25)'
                   }}
                 >
-                  Get a Free Quote
+                  Get a Price Quote
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
